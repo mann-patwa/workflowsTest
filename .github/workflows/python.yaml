@@ -36,7 +36,7 @@ jobs:
         uses: ilammy/msvc-dev-cmd@v1.13.0
         with:
           vsversion: "17.0"
-          arch: ${{ matrix.architecture }}
+          # arch: ${{ matrix.architecture }}
 
       - name: install uv
         run: powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
@@ -45,7 +45,8 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11.2"
-          cache: "pip"
+          # cache: "pip"
+          
       - name: find python
         run: pwd
 
