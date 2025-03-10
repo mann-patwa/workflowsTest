@@ -54,7 +54,19 @@ jobs:
         run: Get-Command python | fl *
 
       - name: get all directories
-        run : cd ../.. && ls
+        run : ls
+
+      - name: Upgrade pip and enable wheel support
+        run: python -m pip install --upgrade pip setuptools wheel
+
+      - name: Install InVesalius requirements
+        run: pip install vtkmodules
+
+        
+
+
+  
+
 
 
           
