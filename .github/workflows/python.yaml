@@ -45,7 +45,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.11.2"
-          # cache: "pip"
+          cache: "pip"
           
       - name: find python
         run: pwd
@@ -68,6 +68,29 @@ jobs:
       - name: run python script
         run: python app.py
 
+
+      - uses: suisei-cn/actions-download-file@818d6b7dc8fe73f2f924b6241f2b1134ca1377d9
+        id: pyinstaller
+        name: Download pyinstaller
+        with:
+          url: "https://github.com/pyinstaller/pyinstaller/archive/refs/tags/v6.9.0.zip"
+          target: ./pyinstaller/
+
+      - name: Extract pyinstaller file
+        uses: ihiroky/extract-action@v1
+        with:
+          file_path: ./pyinstaller/v6.9.0.zip
+          extract_dir: ./pyinstaller/
+
+      - name: Compile pyinstaller bootloader
+        run: |
+          cd ./pyinstaller/pyinstaller-6.9.0/bootloader/
+          python3 ./waf distclean all
+          cd ..
+          pip install .
+
+      - name: chck dir contentes
+        run : dir
       # - name: 
 
         
