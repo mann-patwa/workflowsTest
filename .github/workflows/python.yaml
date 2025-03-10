@@ -91,7 +91,16 @@ jobs:
 
       - name: chck dir contentes
         run : dir
-      # - name: 
+        
+      - name: install exe of app
+        run : pyinstaller app.py
+
+      - name: check
+        run: |
+          dir
+          cd build
+          dir
+          
 
         
 
