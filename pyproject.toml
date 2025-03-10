@@ -58,15 +58,15 @@ dev = [
 # inv = 'invesalius.app:main'
 
 
-# [build-system]
-# requires = ["scikit-build-core", "cython >= 3.0.2", "numpy >= 1.26.4"]
-# build-backend = "scikit_build_core.build"
+[build-system]
+requires = ["scikit-build-core", "cython >= 3.0.2", "numpy >= 1.26.4"]
+build-backend = "scikit_build_core.build"
 
 
-# [tool.scikit-build]
-# experimental = true
+[tool.scikit-build]
+experimental = true
 # wheel.packages = ["invesalius","invesalius_cy"]
-# editable.mode = "inplace"
+editable.mode = "inplace"
 
 
 # [tool.setuptools]
